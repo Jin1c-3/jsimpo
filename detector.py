@@ -25,8 +25,25 @@ class jsimpo_detector:
         if current_node is None:
             current_node = self.root_node
         
-        query = self.language.query('(function_declaration) @function_declaration')
-        fn_nodes = query.captures(current_node)['function_declaration']
+        fn_nodes = []
+        # query = self.language.query('(function_declaration) @function_declaration')
+        # results = query.captures(current_node)
+        # if 'function_declaration' in results:
+        #     fn_nodes = fn_nodes + results['function_declaration']
+        
+        query = self.language.query('''
+        (variable_declarator 
+            name: (identifier)
+            value: (function_expression)
+        ) @function_declaration
+        (function_declaration) @function_declaration
+        ''')
+        results = query.captures(current_node)
+        # print(results)
+        if 'function_declaration' in results:
+            fn_nodes = fn_nodes + results['function_declaration']
+
+
         self.functions = {node_to_text(node.child_by_field_name('name')):node for node in fn_nodes}
         return self.functions
 
@@ -58,10 +75,19 @@ class jsimpo_detector:
     
     def is_static_call(self, current_node:tree_sitter.Node):
         assert current_node.type == 'call_expression'
+
+        fn_name = node_to_text(current_node.child_by_field_name('function'))
         parameters = current_node.child_by_field_name('arguments')
-        
+
         static_parameters = [is_static_value(parameter) for parameter in parameters.named_children]
         is_static = sum(static_parameters) == len(static_parameters)
+
+        # avoid self-recursive
+        parent_node, src_node = current_node, self.functions[self.reverse_alias[fn_name]]
+        while parent_node.parent is not None:
+            if parent_node == src_node:
+                return True
+            parent_node = parent_node.parent
         return is_static
         
     def bind_functions(self):
@@ -82,10 +108,10 @@ class jsimpo_detector:
                 if head in visited:
                     continue
                 else:
+                    self.alias[fn_name].add(head)
                     visited.add(head)
                 new_fns = [src for src, dst in self.single_assignments.items() if dst == head]
                 for new_fn in new_fns:
-                    self.alias[fn_name].add(new_fn)
                     candidates.put_nowait(new_fn)
         self.reverse_alias = {new_name: fn_name for fn_name, alias in self.alias.items() for new_name in alias}
         return self.alias
@@ -95,8 +121,6 @@ class jsimpo_detector:
         self.extract_single_assignment()
         self.bind_functions()
         self.extract_call_exprs()
-        # print(self.alias)
-        # print(self.reverse_alias)
 
         self.static_counts = {fn_name:0 for fn_name in self.functions.keys()}
         self.dynamic_counts = {fn_name:0 for fn_name in self.functions.keys()}
@@ -121,6 +145,8 @@ class jsimpo_detector:
 
 def test_detector():
     with open('./jsdata/rand_jsjiami/1255.js-jiami.js', 'r') as f:
+        js_file = f.read()
+    with open('./jsdata/rand_ob/1255.js-ob.js', 'r') as f:
         js_file = f.read()
 
     detector = jsimpo_detector(js_file)
