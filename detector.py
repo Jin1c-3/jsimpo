@@ -1,4 +1,5 @@
 import os, sys
+from queue import Queue
 import tree_sitter
 import tree_sitter_javascript as tsjs
 from tree_sitter import Language, Parser
@@ -15,7 +16,7 @@ def is_static_value(node:tree_sitter.Node) -> bool:
 class jsimpo_detector:
     def __init__(self, src_file:str):
         self.language = Language(tsjs.language())
-        self.parser = Parser(JS_LANGUAGE)
+        self.parser = Parser(self.language)
         self.src_file = src_file
         self.tree = self.parser.parse(bytes(self.src_file, "utf8"))
         self.root_node = self.tree.root_node
@@ -33,13 +34,16 @@ class jsimpo_detector:
         if current_node is None:
             current_node = self.root_node
         
-        query = detector.language.query('''
+        query = self.language.query('''
         (variable_declarator 
             name: (identifier)
             value: (identifier)
         )@assignment
         ''')
-        ass_nodes = query.captures(current_node)['assignment']
+        try:
+            ass_nodes = query.captures(current_node)['assignment']
+        except:
+            ass_nodes = []
         self.single_assignments = {node_to_text(node.child_by_field_name('name')):\
                                    node_to_text(node.child_by_field_name('value')) for node in ass_nodes}
         return self.single_assignments
@@ -66,11 +70,64 @@ class jsimpo_detector:
         - self.extract_fns()
         - self.extract_single_assignment()
         '''
+        self.alias = {fn_name:set() for fn_name in self.functions.keys()}
 
-        self.
-        for src, dst in self.single_assignments.items():
+        for fn_name in self.functions.keys():
+            candidates = Queue()
+            candidates.put_nowait(fn_name)
+            visited = set()
 
-        
+            while not candidates.empty():
+                head = candidates.get_nowait()
+                if head in visited:
+                    continue
+                else:
+                    visited.add(head)
+                new_fns = [src for src, dst in self.single_assignments.items() if dst == head]
+                for new_fn in new_fns:
+                    self.alias[fn_name].add(new_fn)
+                    candidates.put_nowait(new_fn)
+        self.reverse_alias = {new_name: fn_name for fn_name, alias in self.alias.items() for new_name in alias}
+        return self.alias
+
+    def extract_spurious_fn(self, max_number=1):
+        self.extract_fns()
+        self.extract_single_assignment()
+        self.bind_functions()
         self.extract_call_exprs()
+        # print(self.alias)
+        # print(self.reverse_alias)
+
+        self.static_counts = {fn_name:0 for fn_name in self.functions.keys()}
+        self.dynamic_counts = {fn_name:0 for fn_name in self.functions.keys()}
+
         for fn in self.call_exprs:
-            print(self.is_static_call(fn), node_to_text(fn))
+            fn_name = node_to_text(fn.child_by_field_name('function'))
+            if fn_name not in self.reverse_alias:
+                continue
+            raw_fn_name = self.reverse_alias[fn_name]
+            if self.is_static_call(fn):
+                self.static_counts[raw_fn_name] = self.static_counts[raw_fn_name] + 1
+            else:
+                self.dynamic_counts[raw_fn_name] = self.dynamic_counts[raw_fn_name] + 1
+        print(self.static_counts, self.dynamic_counts)
+
+        scores = [(self.static_counts[fn_name], self.dynamic_counts[fn_name], fn_name) \
+                   for fn_name in self.functions.keys()]
+        scores = [(i, k) for i, j, k in scores if j == 0]
+        scores.sort(reverse=True)
+        return [k for i, k in scores[:max_number]]
+
+
+def test_detector():
+    with open('./jsdata/rand_jsjiami/1255.js-jiami.js', 'r') as f:
+        js_file = f.read()
+
+    detector = jsimpo_detector(js_file)
+    spurious_fns = detector.extract_spurious_fn(1)
+    print(f'spurious_fns: {spurious_fns}\n')
+    for spurious_fn in spurious_fns:
+        print(f'alias of {spurious_fn}:\n{detector.alias[spurious_fn]}')
+
+if __name__ == '__main__':
+    test_detector()
