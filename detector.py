@@ -25,12 +25,6 @@ class jsimpo_detector:
         if current_node is None:
             current_node = self.root_node
         
-        fn_nodes = []
-        # query = self.language.query('(function_declaration) @function_declaration')
-        # results = query.captures(current_node)
-        # if 'function_declaration' in results:
-        #     fn_nodes = fn_nodes + results['function_declaration']
-        
         query = self.language.query('''
         (variable_declarator 
             name: (identifier)
@@ -41,8 +35,9 @@ class jsimpo_detector:
         results = query.captures(current_node)
         # print(results)
         if 'function_declaration' in results:
-            fn_nodes = fn_nodes + results['function_declaration']
-
+            fn_nodes = results['function_declaration']
+        else:
+            fn_nodes = []
 
         self.functions = {node_to_text(node.child_by_field_name('name')):node for node in fn_nodes}
         return self.functions
@@ -57,9 +52,10 @@ class jsimpo_detector:
             value: (identifier)
         )@assignment
         ''')
-        try:
-            ass_nodes = query.captures(current_node)['assignment']
-        except:
+        results = query.captures(current_node)
+        if 'assignment' in results:
+            ass_nodes = results['assignment']
+        else:
             ass_nodes = []
         self.single_assignments = {node_to_text(node.child_by_field_name('name')):\
                                    node_to_text(node.child_by_field_name('value')) for node in ass_nodes}
@@ -70,7 +66,11 @@ class jsimpo_detector:
             current_node = self.root_node
         
         query = self.language.query('(call_expression) @call_expression')
-        self.call_exprs = query.captures(current_node)['call_expression']
+        results = query.captures(current_node)
+        if 'call_expression' in results:
+            self.call_exprs = results['call_expression']
+        else:
+            self.call_exprs = []
         return self.call_exprs
     
     def is_static_call(self, current_node:tree_sitter.Node):
