@@ -1,1 +1,0 @@
-KISSY.use('tbhome/taobao-2021/0.0.34/index');

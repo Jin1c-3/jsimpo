@@ -1,1 +1,0 @@
-(function(){var a="appinstalled",b=!0;window.addEventListener(a,google_tag_manager["GTM-TLDPV3J"].macro(72),b)})();

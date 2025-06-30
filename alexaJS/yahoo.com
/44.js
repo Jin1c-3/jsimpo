@@ -1,1 +1,0 @@
-{"enable_search_ui":true,"highlight_searchassist":true,"overlay_class":"darker","scrollThreshold":4}

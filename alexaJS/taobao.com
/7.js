@@ -1,1 +1,0 @@
-KISSY.use('kg/global-util/1.0.7/',{sync:true});

@@ -1,3 +1,0 @@
-
-      window.Ads = { protocol: 'https:' };
-    

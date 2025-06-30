@@ -1,1 +1,0 @@
-if(typeof uet === 'function'){ uet('bb', 'imdbHeader', {wb: 1}); }

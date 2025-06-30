@@ -1,1 +1,0 @@
-{"@context":"https://schema.org","@type":"WebSite","url":"https://www.reddit.com/","potentialAction":{"@type":"SearchAction","target":"https://www.reddit.com/search?q={search_term_string}\u0026referrer=sitelinks_searchbox","query-input":"required name=search_term_string"}}

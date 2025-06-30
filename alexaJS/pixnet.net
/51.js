@@ -1,1 +1,0 @@
-var _type='mainpage_blog_new';_uCount();

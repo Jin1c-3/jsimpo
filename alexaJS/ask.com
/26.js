@@ -1,1 +1,0 @@
-window.jQuery?$(document).ready(function(){$(".PartialKnowledgeGraph-container-text-ad").removeAttr("href")}):document.addEventListener("DOMContentLoaded",function(){var a=document.getElementsByClassName(".PartialKnowledgeGraph-container-text-ad");a&&0<a.length&&a[0].removeAttribute("href")});

@@ -1,1 +1,0 @@
-obApi("track","10 Seconds Visit");

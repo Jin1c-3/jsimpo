@@ -1,1 +1,0 @@
-(function(w){w.caches && w.caches.delete('okMessenger')})(window)

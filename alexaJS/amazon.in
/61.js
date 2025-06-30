@@ -1,1 +1,0 @@
-P.when("LinkDecorator").execute("LDEventListenerInit", function(ld){ ld("pageContent"); })

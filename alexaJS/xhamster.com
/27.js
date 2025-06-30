@@ -1,1 +1,0 @@
-Track('desktop', true);

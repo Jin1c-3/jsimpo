@@ -1,1 +1,0 @@
-window._pxAppId = 'PXgNtTli3A';

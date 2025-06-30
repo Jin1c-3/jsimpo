@@ -1,1 +1,0 @@
-window.HEADER_DATA.hdCode = 'hd-new'

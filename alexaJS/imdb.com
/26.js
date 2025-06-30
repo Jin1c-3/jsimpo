@@ -1,1 +1,0 @@
-if(typeof uet === 'function'){ uet('be', 'LoadFonts', {wb: 1}); }

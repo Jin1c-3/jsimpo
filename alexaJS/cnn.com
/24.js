@@ -1,1 +1,0 @@
-if (WM.UserConsent.inUserConsentState(["iab","vendor","data-store","ads-contextual","ads-person-prof","ads-person","content-person-prof","content-person","measure-ads","measure-content","measure-market","product-develop"], {id: "outbrain"}) === false) {CNN.Features.enableOutbrain = false;CNN.OutbrainVideoKPISrc = "";CNN.ToggleOutbrain = {};}

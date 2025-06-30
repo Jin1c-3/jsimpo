@@ -1,1 +1,0 @@
-BigPipe.onPageletArrive({"id":"box-hotlist","children":[],"renderMode":"default","parent":null,"html":{"container":"__cnt_0_1"},"hooks":{"load":["__cb_0_41"]},"deps":{"load":[]}});

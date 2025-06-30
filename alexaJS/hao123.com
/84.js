@@ -1,1 +1,0 @@
-BigPipe.onPageletArrive({"id":"hao123-skin","children":[],"renderMode":"default","parent":null});

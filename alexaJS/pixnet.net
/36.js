@@ -1,1 +1,0 @@
-mainpage.bind_index_ga_event();

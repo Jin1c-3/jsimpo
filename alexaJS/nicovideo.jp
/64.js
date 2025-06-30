@@ -1,1 +1,0 @@
-window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"ycl_cookie"});ytag({type:"ycl_cookie_extended"});

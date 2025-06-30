@@ -1,1 +1,0 @@
-performance && performance.mark && performance.mark('scripts-blocking-start')

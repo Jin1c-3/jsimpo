@@ -1,1 +1,0 @@
-window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"yss_retargeting",config:{yahoo_ss_retargeting_id:"1001168154",yahoo_sstag_custom_params:{}}});

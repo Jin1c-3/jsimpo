@@ -1,1 +1,0 @@
-(function(){document.cookie="viewport="+window.screen.availHeight+";path=/";})();

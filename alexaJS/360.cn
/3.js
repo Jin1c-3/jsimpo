@@ -1,1 +1,0 @@
-window.onload=function(){var e=document.getElementById("current-year");e&&(e.innerHTML=(new Date).getFullYear())}

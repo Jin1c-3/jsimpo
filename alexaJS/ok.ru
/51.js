@@ -1,1 +1,0 @@
-function setToolbarListeners() { if (typeof __PHI !== 'undefined') { __PHI.on('load', function() { __PH.on('langChange', function(data) { var url = '/dk?cmd=lang&amp;&amp;st.cmd=anonymMain'; var finalUrl = url + '&st.lang=' + data.data.lang.substring(0, 2); location.href = finalUrl; }); }); } } setToolbarListeners();

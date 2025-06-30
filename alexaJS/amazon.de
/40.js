@@ -1,1 +1,0 @@
-window.navmet.push({key:'UpNav',end:+new Date(),begin:window.navmet.tmp});

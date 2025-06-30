@@ -1,1 +1,0 @@
-OK.loader.use(["OKCustomJs"], function() {OK.Layers.remove("video_player");});

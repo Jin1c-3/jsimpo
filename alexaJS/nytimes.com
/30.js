@@ -1,1 +1,0 @@
-window.registerInteractive && window.registerInteractive("100000008370433");

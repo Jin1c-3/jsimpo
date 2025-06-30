@@ -1,1 +1,0 @@
-OK.loader.execRequire('OK/MediaLayer', function(mtLayer) { mtLayer.closeLayer(); });

@@ -1,1 +1,0 @@
-var langRedirectURL = "https://www.chase.com/espanol";

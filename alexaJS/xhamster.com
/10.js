@@ -1,1 +1,0 @@
-{"@context":"https://schema.org","@type":"WebSite","url":"https://xhamster.com/","potentialAction":{"@type":"SearchAction","target":"https://xhamster.com/search/{search_term_string}?from=google","query-input":"required name=search_term_string"}}

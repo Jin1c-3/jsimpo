@@ -1,1 +1,0 @@
-window.__public_path__ = 'https://assets.nflxext.com/web/ffe/wp/';
