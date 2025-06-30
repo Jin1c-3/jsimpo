@@ -1,9 +1,0 @@
-define([
-    'exports',
-    'foo'
-], function (_0x15c133, _0x2dd366) {
-    'use strict';
-    _0x15c133['__esModule'] = !![];
-    _0x15c133['default'] = void 0;
-    _0x15c133['default'] = _0x2dd366['foo'];
-});

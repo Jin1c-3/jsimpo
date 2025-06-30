@@ -1,3 +1,0 @@
-function f(_0x332cfd, _0x332cfd) {
-    return _0x332cfd;
-}

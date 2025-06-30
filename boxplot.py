@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import copy
-import numpy as np
-from sqlalchemy import all_
 
 # grouped boxplot
 dict_demo_group = {'s1-m1': [1, 2, 3, 4, 5, 6, 7, 8], 's2-m2': [9, 8, 7, 6, 5, 4, 3, 2, 1], 's1-m2': [1, 3, 1, 2, 6, 7, 0, 8, 1],

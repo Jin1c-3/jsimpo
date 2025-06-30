@@ -1,1 +1,0 @@
-try{throw 0x0;}catch(_0x177faf){console['log']('it\x20failed,\x20but\x20this\x20code\x20executes');}finally{console['log']('this code also executes');}

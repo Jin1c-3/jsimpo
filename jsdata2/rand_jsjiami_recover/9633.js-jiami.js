@@ -1,3 +1,0 @@
-exports['setValue'] = function (_0x11b505) {
-    exports['value'] = _0x11b505;
-};

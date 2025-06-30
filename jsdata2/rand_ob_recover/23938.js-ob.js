@@ -1,1 +1,0 @@
-var bar = () => arguments, baz = () => () => arguments;

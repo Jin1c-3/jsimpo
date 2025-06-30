@@ -1,1 +1,0 @@
-function f(){var _0x4f27eb={'UrPol':function(_0x5daa64){return _0x5daa64();}};try{_0x4f27eb['UrPol'](f);}catch(_0x4deedb){try{Realm['create']();}catch(_0x6164e0){quit();}}}f();

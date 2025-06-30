@@ -1,1 +1,0 @@
-import _0x536f62 from'./.internal/createRange.js';const rangeRight=_0x536f62(!![]);export default rangeRight;

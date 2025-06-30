@@ -1,3 +1,0 @@
-const foo = async function ({ async: a = bar }) {
-  await baz;
-};

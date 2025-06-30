@@ -1,2 +1,0 @@
-Failed!
-Auto-Scan Failed.

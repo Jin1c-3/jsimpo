@@ -1,1 +1,0 @@
-define(function(require,exports,module){"use strict";exports.initExtension=function(){isNotDefined();return new $.Deferred()}});define(function(require,exports,module){"use strict";exports.initExtension=function(){isNotDefined();return new $.Deferred()}});

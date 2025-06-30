@@ -1,1 +1,0 @@
-function defaultToAny(value,...defaultValues){return _0x4341d8(defaultValues,_0x22bb1b,value);}

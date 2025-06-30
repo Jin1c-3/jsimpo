@@ -1,3 +1,0 @@
-export {
-    something
-} from './a';

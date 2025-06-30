@@ -1,2 +1,0 @@
-var commerce = {};
-module['exports'] = commerce, commerce[_0x22bab8(177)] = require(_0x22bab8(178)), commerce[_0x22bab8(179)] = require(_0x22bab8(180)), commerce['product_name'] = require(_0x22bab8(181));

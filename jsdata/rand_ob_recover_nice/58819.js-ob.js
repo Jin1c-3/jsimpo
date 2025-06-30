@@ -1,3 +1,0 @@
-'use strict';
-let lo = new (Intl[_0x34da7e(160)])("de-u-kk-false-ks-level1-kv-space-cu-eur-ms-metric-nu-latn-lb-strict-" + _0x34da7e(161));
-

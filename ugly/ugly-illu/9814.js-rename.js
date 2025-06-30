@@ -1,6 +1,0 @@
-module.exports = function o(t) {
-  const r = t.template("import foo from './foo';");
-  return { visitor: { Program(o) {
-        o.node.body.unshift(r());
-      } } };
-};

@@ -1,1 +1,0 @@
-function target(){};var proxy=new Proxy(target,{'get'(){target['prototype']=0x7b;}});new proxy();

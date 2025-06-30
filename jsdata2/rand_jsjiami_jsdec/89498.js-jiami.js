@@ -1,1 +1,0 @@
-export default function topLevel(_0x1feb70,_0x58a9a7){_0x58a9a7['send']('I am another sub-directory function');}

@@ -1,1 +1,0 @@
-var arguments=0x1;function fn(){var _0xea997a=()=>{return arguments;};}var bar=()=>arguments;var baz=()=>()=>arguments;

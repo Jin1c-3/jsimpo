@@ -1,3 +1,0 @@
-function foo(_0xeda88a) {
-    return _0xeda88a + 0x3 + 0x4;
-}

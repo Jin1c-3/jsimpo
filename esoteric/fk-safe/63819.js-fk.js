@@ -1,2 +1,0 @@
-  testCodePointRange(5);
-  

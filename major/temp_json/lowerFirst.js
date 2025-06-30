@@ -1,1 +1,0 @@
-const lowerFirst=_0x4dea97('toLowerCase');

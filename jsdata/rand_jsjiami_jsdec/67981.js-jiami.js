@@ -1,1 +1,0 @@
-class Test{['getString'](){var _0x24018f={'inPzL':'hello'};return _0x24018f['inPzL'];}}exports['default']=Test;

@@ -1,1 +1,0 @@
-var s="('')x\nx";assertEquals(s.match(/\((').*\1\)/i),["('')","'"]);

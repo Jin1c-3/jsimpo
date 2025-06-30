@@ -1,1 +1,0 @@
-let forcedTheme=null;{const result=/\?theme=(\w+)/['exec'](window['location']['href']);if(result)forcedTheme=result[0x1];}console['log']('forced\x20theme',forcedTheme);export function getForcedTheme(){return forcedTheme;}

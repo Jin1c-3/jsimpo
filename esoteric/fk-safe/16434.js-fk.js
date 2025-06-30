@@ -1,5 +1,0 @@
-  done : while (! ! [])
-  {
-    break done;
-  }
-  

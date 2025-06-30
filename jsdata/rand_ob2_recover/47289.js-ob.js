@@ -1,1 +1,0 @@
-module[_0x5be143(286)] = { 'target': 'serverless' };

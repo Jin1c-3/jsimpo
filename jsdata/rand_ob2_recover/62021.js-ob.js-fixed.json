@@ -1,9 +1,0 @@
-{
-    "type": "Program",
-    "body": [
-        {
-            "type": "EmptyStatement"
-        }
-    ],
-    "sourceType": "script"
-}

@@ -1,2 +1,0 @@
-const x = 0x1;
-const y = 0x2;

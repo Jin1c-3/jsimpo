@@ -1,1 +1,0 @@
-import*as _0x1a8bfa from'@hapi/joi';export default{'id':_0x1a8bfa['string'](),'key':_0x1a8bfa['string'](),'_key':_0x1a8bfa['string'](),'_message':_0x1a8bfa['string']()};

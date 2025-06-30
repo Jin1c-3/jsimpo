@@ -1,1 +1,0 @@
-module.exports=function(e){var o=e.loopback.Router();o.get("/wiki/*",r);e.use(o);function r(e,o){o.redirect("http://forum.freecodecamp.org/")}};

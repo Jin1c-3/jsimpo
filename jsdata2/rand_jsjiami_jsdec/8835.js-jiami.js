@@ -1,1 +1,0 @@
-export function test(){var _0x39b053={'FDZzF':'pkg-browser-multiple main-entry'};return _0x39b053['FDZzF'];}

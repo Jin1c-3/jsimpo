@@ -1,5 +1,0 @@
-import someFunction from "./someFunction";export default (function t(e = true, n = t) {
-  if (e) {
-    return 1 + n(false);
-  }return 1;
-});

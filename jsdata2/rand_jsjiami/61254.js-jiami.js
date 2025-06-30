@@ -1,1 +1,0 @@
-var fn=({foo={}={}})=>{return foo;};if(!![]){fn({});}

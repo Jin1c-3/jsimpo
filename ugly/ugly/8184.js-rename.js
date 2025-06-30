@@ -1,1 +1,0 @@
-module.exports=new Promise(e=>{let r=require("./async");e(r+3)});

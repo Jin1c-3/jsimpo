@@ -1,1 +1,0 @@
-const selectCollectionTypesRelatedPermissions=_0x1dc98d=>_0x1dc98d['get']('permissionsManager')['collectionTypesRelatedPermissions'];export default selectCollectionTypesRelatedPermissions;

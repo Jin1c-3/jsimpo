@@ -1,5 +1,0 @@
-const global = this;
-assertEquals("object", typeof global);const s = new Set();
-s.add(global);assertTrue(s.has(global));for (var i = 0; i < 100; i++) {
-  s.add(i);
-}assertTrue(s.has(global));

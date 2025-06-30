@@ -1,3 +1,0 @@
-function f(_0x45e325, _0x45e325) {
-    return _0x45e325;
-}

@@ -1,1 +1,0 @@
-assertThrows(_0x19dd59(148), SyntaxError);

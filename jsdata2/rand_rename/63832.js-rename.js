@@ -1,1 +1,0 @@
-function spread(s){return{...s}}assertEquals({},spread(new function s(){}));assertEquals({},spread(new function s(){}));assertEquals({},spread(new function s(){}));assertEquals({},spread(new function s(){}));assertEquals({},spread(new function s(){}));assertEquals({},spread(undefined));

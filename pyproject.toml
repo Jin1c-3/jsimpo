@@ -1,0 +1,10 @@
+[project]
+name = "jsimpo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "js2py>=0.74",
+    "pandas>=2.3.0",
+]

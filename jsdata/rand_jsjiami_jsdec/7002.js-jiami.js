@@ -1,1 +1,0 @@
-import*as _0x22dabc from'./index.js';if(typeof module<'u')module['exports']=_0x22dabc;else self['preact']=_0x22dabc;

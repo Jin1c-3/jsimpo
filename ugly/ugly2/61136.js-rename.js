@@ -1,1 +1,0 @@
-(function(){"use asm";return function(n){for(var r=0;r<100000;++r){}return n}})()(this+"i");

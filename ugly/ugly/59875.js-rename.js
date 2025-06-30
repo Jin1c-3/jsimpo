@@ -1,1 +1,0 @@
-function foo(o,s,t,n){"use strict";const c=10;c=20}assertThrows("foo.length()");

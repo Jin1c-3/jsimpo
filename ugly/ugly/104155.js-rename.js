@@ -1,1 +1,0 @@
-"use strict";function hasPragma(r){return/^\s*#[^\S\n]*@(format|prettier)\s*(\n|$)/.test(r)}function insertPragma(r){return"# @format\n\n"+r}module.exports={hasPragma:hasPragma,insertPragma:insertPragma};

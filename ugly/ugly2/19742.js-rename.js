@@ -1,1 +1,0 @@
-var IdenticalName=function n(t){return t};(function n(){});

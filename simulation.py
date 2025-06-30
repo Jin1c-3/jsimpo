@@ -1,12 +1,9 @@
 import json
 from operator import ne
 from subprocess import call
-from appscript import k
 import js2py
 import os, sys
-from regex import F
 
-from sqlalchemy import false
 import divide_ob
 import copy
 import time

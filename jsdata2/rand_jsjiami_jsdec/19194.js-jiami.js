@@ -1,1 +1,0 @@
-for(let i=0x0;i<0x5;i++){const l=i;setTimeout(function(){console['log'](l);},0x1);}

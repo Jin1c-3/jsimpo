@@ -1,1 +1,0 @@
-function f(n,n){return n}

@@ -1,1 +1,0 @@
-function test(){return(/\.(eot|otf|ttf|wo)$/i)}function test(){return(/\.(eot|otf|ttf|wo)$/i)}

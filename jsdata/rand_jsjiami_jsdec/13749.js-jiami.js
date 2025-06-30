@@ -1,1 +1,0 @@
-var foo='test '+_['test'](foo)+'\x20'+bar;

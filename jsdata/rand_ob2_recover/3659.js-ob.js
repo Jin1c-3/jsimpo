@@ -1,1 +1,0 @@
-module[_0xa7a996(266)] = ['#{city_name}'];

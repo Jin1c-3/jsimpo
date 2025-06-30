@@ -1,1 +1,0 @@
-it("creates source maps for .mjs output files by default",function(){var e=require("fs");var a=e.readFileSync(__filename,"utf-8");var r=/sourceMappingURL\s*=\s*(.*)/.exec(a);expect(r[1]).toBe("bundle0.mjs.map")});

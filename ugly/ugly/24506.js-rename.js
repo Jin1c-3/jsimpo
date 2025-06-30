@@ -1,1 +1,0 @@
-function*myGenerator(r){var a,e;return e=(a=r,yield a),Math.abs(e)}

@@ -1,3 +1,0 @@
-'use strict';
-XmlBuilder = Npm[_0x4b8d6f(423)](_0x4b8d6f(424));
-
