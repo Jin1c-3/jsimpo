@@ -1,0 +1,15 @@
+{
+  "name": "jsimpo",
+  "version": "1.0.0",
+  "description": "JavaScript去混淆工具",
+  "main": "main.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "esprima": "^4.0.1",
+    "escodegen": "^2.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
