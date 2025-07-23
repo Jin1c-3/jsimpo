@@ -101,7 +101,8 @@ def call_graph(program):
             if cnts[name] > maxNumber:
                 maxNumber = cnts[name]
                 maxName = name
-    illegalFun[maxName] = callee[maxName]
+    if maxName:
+        illegalFun[maxName] = callee[maxName]
     return illegalFun
     # print(callee_name)
 
